@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+
+// Value Pool Navbar Styling
+.valuePool {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: $dark-blue;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+
+  .valuePoolTitle {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+      width: 24px;
+    }
+  }
+}
