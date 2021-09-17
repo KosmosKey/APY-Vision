@@ -21,4 +21,18 @@
       width: 24px;
     }
   }
+
+  .valuePoolUpdates {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 5px;
+    }
+
+    svg {
+      margin: 0 8px;
+      cursor: pointer;
+    }
+  }
 }

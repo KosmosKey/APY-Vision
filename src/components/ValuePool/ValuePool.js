@@ -1,5 +1,6 @@
 import React from "react";
 import PoolLogo from "../../Assets/Images/pool.png";
+import { Discord, Dots, Mail, Twitter } from "../Logo/Icons";
 import styles from "./valuepool.module.scss";
 
 const ValuePool = () => {
@@ -10,10 +11,12 @@ const ValuePool = () => {
         <p>VALUE pool data coming soon!</p>
       </div>
 
-      <div>
-              <p>Subscribe to updates:</p>
-              
-              <div></div>
+      <div className={styles.valuePoolUpdates}>
+        <p>Subscribe to updates:</p>
+        <Dots />
+        <Discord />
+        <Twitter />
+        <Mail />
       </div>
     </div>
   );
