@@ -1,14 +1,15 @@
+import * as actions from "../actions";
+
 const initialValues = {
-  headerStats: [],
   poolData: [],
-  wallet: null,
 };
 
 const poolReducer = (state = initialValues, action) => {
   switch (action.type) {
-    case "Get":
+    case actions.GET_DATA:
       return {
         ...state,
+        poolData: action.data,
       };
 
     default:

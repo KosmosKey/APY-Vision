@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+// Header stats styling
+.headerStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 16px;
+
+  .contentHeader {
+    background: $ligh-gray;
+    border: 1px solid #e8eaee;
+    border-radius: 8px;
+    padding: 12px;
+
+    .contentInfoContainer {
+      h2 {
+        color: $gray;
+        font-size: 14px;
+      }
+    }
+
+    .contentPrice {
+      h1 {
+        color: $purple;
+        font-size: 24px;
+      }
+    }
+  }
+}

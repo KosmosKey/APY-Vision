@@ -1,4 +1,67 @@
+@import "../../styles/variables.scss";
+
+// Sidebar styling
 .sideBar {
-  flex: 0.2;
-  background: red;
+  flex: 0.125;
+  background: #fff;
+  padding: 40px 44px;
+
+  img {
+    width: 177px;
+    margin-bottom: 8px;
+  }
+
+  .sideBarMainList {
+    margin-top: 12px;
+    ul {
+      li {
+        list-style: none;
+        margin: 17px 0;
+        padding: 6px;
+        font-size: 16px;
+        font-weight: 700;
+        color: $gray;
+        cursor: pointer;
+        transition: 350ms ease;
+
+        &:hover {
+          background: #f6f7f85b;
+          color: $purple;
+          padding-left: 20px;
+        }
+
+        // Same as li.active
+        &.active {
+          color: $purple;
+        }
+
+        svg {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+
+  .sideBarMenuInformation {
+    margin-top: 80px;
+
+    ul {
+      li {
+        list-style: none;
+        margin: 20px 0;
+        padding: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $gray;
+        cursor: pointer;
+        transition: 350ms ease-in-out;
+
+        &:hover {
+          background: #f6f7f85b;
+          color: $purple;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
 }

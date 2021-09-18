@@ -15,3 +15,9 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
+// Content area increases as viewport increases, max-width: 1424px
+.container {
+  max-width: 1424px;
+  margin: 0 auto;
+}

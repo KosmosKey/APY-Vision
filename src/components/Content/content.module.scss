@@ -1,4 +1,35 @@
+@import "../../styles/variables.scss";
+
+// Content stylings
 .content {
-  flex: 0.8;
-  background: yellow;
+  flex: 0.875;
+  width: 100%;
+  padding: 40px 44px;
+  background: #fff;
+
+  .contentPoolTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 28px;
+      color: $gray;
+    }
+
+    span {
+      font-size: 14px;
+      color: #fff;
+      padding: 8px 12px;
+      background: $purple;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 350ms ease;
+
+      &:hover {
+        background: $blue;
+      }
+    }
+  }
 }
