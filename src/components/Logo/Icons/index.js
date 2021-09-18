@@ -6,6 +6,8 @@ import Arrow from "./Arrow";
 import Info from "./Info";
 import ArrowDown from "./ArrowDown";
 import ArrowRightOutlined from "./ArrowRightOutlined";
+import ArrowRight from "./ArrowRight";
+import ArrowLeft from "./ArrowLeft";
 
 export {
   Discord,
@@ -16,4 +18,6 @@ export {
   Info,
   ArrowDown,
   ArrowRightOutlined,
+  ArrowRight,
+  ArrowLeft,
 };

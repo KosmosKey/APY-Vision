@@ -2,10 +2,15 @@ import React from "react";
 import styles from "./TablePool.module.scss";
 import Ethereum from "../../Assets/Images/Eth.png";
 import Coin from "../../Assets/Images/Coin.png";
+import cs from "classnames";
+import NumberFormat from "react-number-format";
 
 // Pools component
 // Children for table body in TablePool component
 const Pools = ({ data }) => {
+  // Gained Value
+  const gainedValue = (data.totalValueUsd * data.netGainUsd) / 100;
+
   return (
     <tr className={styles.pool}>
       <td>
@@ -22,29 +27,61 @@ const Pools = ({ data }) => {
       </td>
       <td>
         <div className={styles.poolCurrentToken}>
-          <div className={styles.poolToken}>
-            <p>400 - 460 LINK</p>
-            <span>+59.99 LINK (+$745.75)</span>
-          </div>
-          <div className={styles.poolToken}>
-            <p>400 - 460 LINK</p>
-            <span>+59.99 LINK (+$745.75)</span>
-          </div>{" "}
+          {data.tokens.slice(0, 2).map((token) => (
+            <div key={token.tokenAddress} className={styles.poolToken}>
+              <p>
+                {token.tokenStartingBalance.toFixed(2)} -{" "}
+                {token.tokenCurrentBalance.toFixed(2)} {token.tokenName}
+              </p>
+              <span
+                className={cs({ [styles.inactive]: token.tokenUsdGain < 0 })}
+              >
+                {token.tokenCurrentBalance.toFixed(2)} {token.tokenName}&nbsp;
+                {token.tokenUsdGain > 0 && "+"}
+                {token.tokenUsdGain.toFixed(2)}
+              </span>
+            </div>
+          ))}
         </div>
       </td>
       <td>
         <div className={styles.poolFarming}>
-          <p>2.98 SUSHI</p>
-          <span>48.800</span>
+          <p>{data.name}</p>
+          <span>${data.totalFeeUsd.toFixed(2)}</span>
         </div>
       </td>
       <td>
         <div className={styles.poolGain}>
-          <p>$11,434.63</p>
-          <span>+0.58% (+$67.16)</span>
+          <NumberFormat
+            thousandSeparator={true}
+            prefix={"$"}
+            displayType={"text"}
+            value={`${data && data.totalValueUsd.toFixed(2)}`}
+            className={styles.currentAvailable}
+          />
+          <span
+            className={cs({
+              [styles.inactive]: data.netGainUsd.toFixed(2) < 0,
+            })}
+          >
+            {data.netGainUsd.toFixed(2) > 0 && "+"}
+            {data.netGainUsd.toFixed(2)}
+            %&nbsp;(
+            {data.netGainUsd.toFixed(2) > 0 && "+"}
+            <NumberFormat
+              value={`${data && gainedValue.toFixed(2)}`}
+              thousandSeparator={true}
+              prefix={"$"}
+              displayType={"text"}
+              className={cs(styles.currentGainedPool, {
+                [styles.inactive]: data.netGainUsd.toFixed(2) < 0,
+              })}
+            />
+            )
+          </span>
         </div>
       </td>
-      <td>
+      <td className={styles.poolGainButtonTable}>
         <div className={styles.poolButtons}>
           <button className={styles.stats}>Pool Stats</button>
           <button className={styles.details}>View Details</button>

@@ -7,6 +7,11 @@
   padding: 40px 44px;
   background: #fff;
 
+  // Max width 1280px
+  @media screen and (max-width: 1280px) {
+    flex: 1;
+  }
+
   .contentPoolTitle {
     display: flex;
     align-items: center;
