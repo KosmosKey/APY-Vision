@@ -3,13 +3,22 @@ import { connect } from "react-redux";
 import ContentHeader from "./ContentHeader";
 import styles from "./headerstats.module.scss";
 
-const HeaderStats = () => {
+const HeaderStats = ({ data }) => {
   return (
     <div className={styles.headerStats}>
-      <ContentHeader />
-      <ContentHeader />
-      <ContentHeader />
-      <ContentHeader />
+      <ContentHeader
+        price={data && data.totalValueUsd}
+        name="Current Market Value (USD)"
+      />
+      <ContentHeader
+        price={data && data.totalFeeUsd}
+        name="Gas Fees + Exit Transactions"
+      />
+      <ContentHeader
+        price={data && data.netGainUsd}
+        name="Liquidity Pool Gains"
+      />
+      <ContentHeader price={data && data.netGainPct} name="Net Market Gains" />
     </div>
   );
 };
@@ -17,7 +26,7 @@ const HeaderStats = () => {
 const mapStateToProps = (state) => {
   const { pool } = state;
   return {
-    data: pool,
+    data: pool.poolData,
   };
 };
 

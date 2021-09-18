@@ -5,6 +5,13 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 16px;
+  margin: 32px 0;
+
+  .contentPrice,
+  .contentInfoContainer {
+    display: flex;
+    align-items: center;
+  }
 
   .contentHeader {
     background: $ligh-gray;
@@ -13,6 +20,8 @@
     padding: 12px;
 
     .contentInfoContainer {
+      justify-content: space-between;
+
       h2 {
         color: $gray;
         font-size: 14px;
@@ -20,9 +29,22 @@
     }
 
     .contentPrice {
-      h1 {
-        color: $purple;
+      margin-top: 8px;
+      span {
+        color: $dark-purple;
         font-size: 24px;
+        font-weight: 700;
+      }
+
+      .gainPrice {
+        color: $green;
+        font-weight: 400;
+        font-size: 14px;
+        margin-left: 5px;
+      }
+
+      .inactive {
+        color: red;
       }
     }
   }

@@ -4,9 +4,11 @@ import { fetchPoolData } from "../../api";
 import { GET_DATA } from "../../redux/actions";
 import HeaderStats from "../HeaderStats/HeaderStats";
 import styles from "./content.module.scss";
+import AddressLogo from "../../Assets/Images/addressLogo.png";
+import { ArrowDown } from "../Logo/Icons";
 
 // Content component
-const Content = ({ getPoolData }) => {
+const Content = ({ getPoolData, data }) => {
   // Use State hooks
   const [loading, setLoading] = useState(true);
 
@@ -30,7 +32,11 @@ const Content = ({ getPoolData }) => {
         <div className={styles.contentPoolTitle}>
           <h1>Your liquidity pool positions:</h1>
 
-          <span>Connect Wallet</span>
+          <div className={styles.contentAddress}>
+            <img src={AddressLogo} alt="address_logo" />
+            <p>{data && data.address}</p>
+            <ArrowDown />
+          </div>
         </div>
 
         <HeaderStats />
@@ -42,7 +48,7 @@ const Content = ({ getPoolData }) => {
 const mapStateToProps = (state) => {
   const { pool } = state;
   return {
-    data: pool,
+    data: pool.poolData,
   };
 };
 

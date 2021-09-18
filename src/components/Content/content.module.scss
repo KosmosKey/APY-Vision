@@ -17,15 +17,32 @@
       color: $gray;
     }
 
-    span {
+    .contentAddress {
+      display: flex;
+      align-items: center;
       font-size: 14px;
       color: #fff;
       padding: 8px 12px;
-      background: $purple;
+      background: $blue;
       font-weight: 700;
       border-radius: 50px;
       cursor: pointer;
       transition: 350ms ease;
+
+      img {
+        margin-right: 5px;
+      }
+
+      svg {
+        margin: 0 5px;
+      }
+
+      p {
+        max-width: 90px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
 
       &:hover {
         background: $blue;
