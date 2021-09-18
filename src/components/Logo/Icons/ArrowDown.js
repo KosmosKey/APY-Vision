@@ -10,8 +10,8 @@ const ArrowDown = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9.96966 3.21967L11.0303 4.28033L6 9.31066L0.969666 4.28033L2.03033 3.21967L6 7.18934L9.96966 3.21967Z"
         fill="white"
       />

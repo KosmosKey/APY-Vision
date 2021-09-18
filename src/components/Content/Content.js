@@ -1,3 +1,4 @@
+// Importing components
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchPoolData } from "../../api";
@@ -6,10 +7,12 @@ import HeaderStats from "../HeaderStats/HeaderStats";
 import styles from "./content.module.scss";
 import AddressLogo from "../../Assets/Images/addressLogo.png";
 import { ArrowDown } from "../Logo/Icons";
+import TablePool from "../TablePool/TablePool";
 
 // Content component
 const Content = ({ getPoolData, data }) => {
   // Use State hooks
+  // We will use loading before we get data
   const [loading, setLoading] = useState(true);
 
   // Function which will fetch data
@@ -26,6 +29,7 @@ const Content = ({ getPoolData, data }) => {
     fetchData();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Content Overview
   return (
     <div className={styles.content}>
       <div className="container">
@@ -40,11 +44,14 @@ const Content = ({ getPoolData, data }) => {
         </div>
 
         <HeaderStats />
+        <TablePool />
       </div>
     </div>
   );
 };
 
+// Map State To Props
+// Getting states from reducers (redux-saga)
 const mapStateToProps = (state) => {
   const { pool } = state;
   return {
@@ -52,10 +59,13 @@ const mapStateToProps = (state) => {
   };
 };
 
+// Map Dispatch To Props
+// Getting dispatch functions (redux-saga)
 const mapDispatchToProps = (dispatch) => {
   return {
     getPoolData: (data) => dispatch({ type: GET_DATA, data }),
   };
 };
 
+// Connecting mapStateToProps and mapDispatchToProps with Content component
 export default connect(mapStateToProps, mapDispatchToProps)(Content);
