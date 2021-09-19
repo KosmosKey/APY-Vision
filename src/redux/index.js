@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import reducer from "./reducer";
-import { getPoolData } from "./sagas";
+import { getPoolData, toggleNavbar } from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -13,6 +13,6 @@ const store = createStore(
   )
 );
 
-sagaMiddleware.run(getPoolData);
+sagaMiddleware.run(getPoolData, toggleNavbar);
 
 export default store;

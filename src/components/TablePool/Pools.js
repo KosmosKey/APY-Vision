@@ -25,7 +25,7 @@ const Pools = ({ data }) => {
           </div>
         </div>
       </td>
-      <td>
+      <td className={styles.poolCurrentTokenTable}>
         <div className={styles.poolCurrentToken}>
           {data.tokens.slice(0, 2).map((token) => (
             <div key={token.tokenAddress} className={styles.poolToken}>
@@ -44,8 +44,8 @@ const Pools = ({ data }) => {
           ))}
         </div>
       </td>
-      <td>
-        <div className={styles.poolFarming}>
+      <td className={styles.poolFeeTable}>
+        <div className={styles.poolFee}>
           <p>{data.name}</p>
           <span>${data.totalFeeUsd.toFixed(2)}</span>
         </div>

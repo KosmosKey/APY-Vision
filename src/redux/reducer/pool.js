@@ -2,6 +2,7 @@ import * as actions from "../actions";
 
 const initialValues = {
   poolData: [],
+  navBoolean: false,
 };
 
 const poolReducer = (state = initialValues, action) => {
@@ -10,6 +11,12 @@ const poolReducer = (state = initialValues, action) => {
       return {
         ...state,
         poolData: action.data,
+      };
+
+    case actions.TOGGLE_NAVBAR:
+      return {
+        ...state,
+        navBoolean: !state.navBoolean,
       };
 
     default:

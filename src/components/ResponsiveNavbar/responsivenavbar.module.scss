@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+// Responsive Navbar stlying
+.responsiveNavbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 30;
+  background: #fff;
+
+  .responsiveNavbarMenu {
+    display: flex;
+    align-items: center;
+    color: $purple;
+    cursor: pointer;
+
+    p {
+      margin-left: 8px;
+      font-weight: 700;
+    }
+  }
+}

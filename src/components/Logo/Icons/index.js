@@ -8,6 +8,8 @@ import ArrowDown from "./ArrowDown";
 import ArrowRightOutlined from "./ArrowRightOutlined";
 import ArrowRight from "./ArrowRight";
 import ArrowLeft from "./ArrowLeft";
+import Menu from "./Menu";
+import Close from "./Close";
 
 export {
   Discord,
@@ -20,4 +22,6 @@ export {
   ArrowRightOutlined,
   ArrowRight,
   ArrowLeft,
+  Menu,
+  Close,
 };

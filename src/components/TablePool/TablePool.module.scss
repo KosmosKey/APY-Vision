@@ -3,14 +3,29 @@
 // Table Pool Styling
 .tablePool {
   margin-top: 16px;
+  z-index: 100 !important;
+
+  // Max width 635px
+  @media screen and (max-width: 635px) {
+    margin-top: 0px;
+  }
 
   .tablePoolPages {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // Max width 635px
+    @media screen and (max-width: 635px) {
+      justify-content: center;
+    }
+
     p {
       color: $gray;
       font-size: 12px;
+      // Max width 635px
+      @media screen and (max-width: 635px) {
+        display: none;
+      }
     }
 
     .tablePoolPageNavigate {
@@ -80,6 +95,27 @@
       th:first-child {
         text-align: left;
       }
+
+      .poolFeeMainTable {
+        // Max Width screen 1050px
+        @media screen and (max-width: 1050px) {
+          display: none;
+        }
+      }
+
+      .tokenEnteredMainTable {
+        // Max Width screen 835px
+        @media screen and (max-width: 835px) {
+          display: none;
+        }
+      }
+
+      .poolGainTable {
+        // Max Width screen 635px
+        @media screen and (max-width: 635px) {
+          text-align: right;
+        }
+      }
     }
   }
 }
@@ -131,54 +167,68 @@
     }
   }
 
-  .poolCurrentToken {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .poolCurrentTokenTable {
+    // Max Width screen 850px
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
 
-    .poolToken {
+    .poolCurrentToken {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      margin: 0 12px;
-      font-size: 14px;
+      justify-content: center;
 
-      p {
-        color: $purple-dark;
-      }
+      .poolToken {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 12px;
+        font-size: 14px;
 
-      span {
-        color: $green;
-        margin-top: 4px;
-        font-weight: 700;
-      }
+        p {
+          color: $purple-dark;
+        }
 
-      .inactive {
-        color: $red;
+        span {
+          color: $green;
+          margin-top: 4px;
+          font-weight: 700;
+        }
+
+        .inactive {
+          color: $red;
+        }
       }
     }
   }
 
-  .poolFarming {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-
-    p {
-      color: $purple-dark;
-      max-width: 100px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+  .poolFeeTable {
+    // Max Width screen 1050px
+    @media screen and (max-width: 1050px) {
+      display: none;
     }
 
-    span {
-      color: $green;
-      font-weight: 700;
-      margin-top: 4px;
+    .poolFee {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+
+      p {
+        color: $purple-dark;
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      span {
+        color: $green;
+        font-weight: 700;
+        margin-top: 4px;
+      }
     }
   }
 
@@ -188,6 +238,13 @@
     justify-content: center;
     align-items: center;
     font-size: 14px;
+
+    // Max width 635px
+    @media screen and (max-width: 635px) {
+      margin-left: auto;
+      align-items: flex-end;
+      width: fit-content;
+    }
 
     .currentAvailable {
       color: $purple-dark;

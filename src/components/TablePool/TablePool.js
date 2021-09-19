@@ -9,7 +9,7 @@ const TablePool = ({ data }) => {
   const [total, setTotal] = useState(0);
 
   // Slice function for mapping array
-  const slicer = data && data.userPools.slice(total, total + 4);
+  const slicer = data && data?.userPools?.slice(total, total + 4);
 
   const sliceArrayForward = () => {
     if (total !== slicer.length) {
@@ -36,9 +36,11 @@ const TablePool = ({ data }) => {
         <thead>
           <tr>
             <th>Pool Name</th>
-            <th>Tokens entered → current</th>
-            <th>Current Fee</th>
-            <th>
+            <th className={styles.tokenEnteredMainTable}>
+              Tokens entered → current
+            </th>
+            <th className={styles.poolFeeMainTable}>Current Fee</th>
+            <th className={styles.poolGainTable}>
               LP gains /{" "}
               <span>
                 Net market gains <Info />
@@ -48,7 +50,7 @@ const TablePool = ({ data }) => {
         </thead>
         <tbody>
           {data &&
-            slicer.map((pool) => (
+            slicer?.map((pool) => (
               <Pools key={pool.lastSyncBlock} data={pool} />
             ))}
         </tbody>

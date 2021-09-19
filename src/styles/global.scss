@@ -21,3 +21,43 @@
   max-width: 1424px;
   margin: 0 auto;
 }
+
+// Carousel styling
+.carousel,
+.carousel-slider,
+.carousel-root {
+  height: 100%;
+  width: calc(100vw - 90px) !important;
+
+  // Max width 635px
+  @media screen and (max-width: 635px) {
+    width: calc(100vw - 35px) !important;
+  }
+}
+
+// Remove carousel status e.g 1 of 4
+.carousel-status {
+  display: none;
+}
+
+// Flex if loading is true
+.flex-position {
+  display: flex;
+  justify-content: center;
+
+    // Max width 635px
+    @media screen and (max-width: 635px) {
+      margin-top: 120px;
+    }
+}
+
+// Carousel dots
+.control-dots {
+  .dot {
+    box-shadow: none !important;
+    background: #d7dfe7 !important;
+  }
+  .dot.selected {
+    background: #6b57b8 !important;
+  }
+}
